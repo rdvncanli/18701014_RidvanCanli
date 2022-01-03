@@ -1,0 +1,87 @@
+﻿@model IEnumerable<myScoreApp.Models.Mekan>
+
+@{
+    ViewData["Title"] = "BenimMekanlar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kayıtlı Hastalar</h2>
+
+<p>
+    <a asp-action="MekanEkle" asp-controller="Mekan">Yeni Hasta Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CatName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.hastalikAdi)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.doktor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hastaninAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kimlikNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numara)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hastalikAciklamasi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hastalikResmi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tarih)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CatName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.hastalikAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.doktor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hastaninAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kimlikNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numara)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hastalikAciklamasi)
+            </td>
+            <td>
+                <img src="~/img/mekan/@item.hastalikResmi" width="50" height="50">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tarih)
+            </td>
+            <td>
+                <a asp-action="MekanGuncelle" asp-route-id="@item.mekanId">Düzenle</a> |
+                |
+                <a asp-action="MekanSil" asp-route-id="@item.mekanId">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

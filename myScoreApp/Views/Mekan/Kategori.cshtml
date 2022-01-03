@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Mekan>
+@{
+    ViewData["Title"] = "Kategori";
+}
+<div class="row  d-flex justify-content-between">
+    @foreach (var item in Model)
+    {
+        <div class="card " style="width: 18rem; margin-bottom:30px;">
+            <img class="card-img-top" src="~/img/mekan/@item.hastalikResmi" alt="Card image cap" width="500" height="300">
+            <div class="card-body">
+                <h5 class="badge badge-dark" style="color:white">@item.hastalikAdi</h5>
+                <h5 class="badge badge-dark" style="color:white">@item.doktor</h5>
+                <h5><span class="badge badge-secondary" style="color:white">@item.tarih</span></h5>
+                <a href="/@item.user/mekan/@item.mekanId" class="btn btn-danger">Detaylı Gör</a>
+            </div>
+        </div>
+    }
+</div>

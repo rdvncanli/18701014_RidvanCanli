@@ -1,0 +1,62 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model myScoreApp.Models.Mekan
+@{
+    ViewData["Title"] = "MekanDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p style=" font-weight:bold; font-size: 25px; margin-bottom: 40px;">Hasta Detayları</p>
+<div class="container">
+    
+    <div class="row">      
+        <div class="col-md-8">
+            <img class="img-fluid" src="~/img/mekan/@Html.DisplayFor(model => model.hastalikResmi)" alt="" width="700" height="500"> 
+        </div>
+        <div class="col-md-4">
+            <ul>
+                <li>
+                    <p style=" font-weight:bold;">Hastalık Kategorisi:</p>
+                    <h5><span class="badge badge-danger" style="color:white">@Html.DisplayFor(model => model.CatName)</span></h5>
+                </li>
+                <li>
+                    <p style=" font-weight:bold;">Hastanın Kayıt Tarihi:</p>
+                    <h5><span class="badge badge-danger" style="color:white">@Html.DisplayFor(model => model.tarih)</span></h5>
+                </li>
+                <li>
+                    <p style=" font-weight:bold;">Doktor:</p>
+                    <h5><span class="badge badge-danger" style="color:white">@Html.DisplayFor(model => model.doktor)</span></h5>
+                </li>
+                <li>
+                    <p style=" font-weight:bold;">Hasta Adı:</p>
+                    <h5><span class="badge badge-danger" style="color:white">@Html.DisplayFor(model => model.hastaninAdi)</span></h5>
+                </li>
+                <li>
+                    <p style=" font-weight:bold;">Hastanın Kimlik Numarası:</p>
+                    <h5><span class="badge badge-danger" style="color:white">@Html.DisplayFor(model => model.kimlikNo)</span></h5>
+                </li>
+                <li>
+                    <p style=" font-weight:bold;">Hastanın Telefon Numarası:</p>
+                    <h5><span class="badge badge-danger" style="color:white">@Html.DisplayFor(model => model.numara)</span></h5>
+                </li>
+                <li>
+                    <p style=" font-weight:bold;">Hastalığın Adı:</p>
+                    <h5><span class="badge badge-danger" style="color:white">@Html.DisplayFor(model => model.hastalikAdi)</span></h5>
+                </li>
+                <li>
+                    <p style=" font-weight:bold;">Hastalığın Açıklaması:</p>
+                    <p style="color:slategrey; font-weight:bold;"> @Html.DisplayFor(model => model.hastalikAciklamasi)</p>
+                </li>
+
+
+
+            </ul>
+           
+
+        </div>
+    </div>
+</div>
+<hr />
+
+

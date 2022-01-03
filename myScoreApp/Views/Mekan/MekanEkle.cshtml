@@ -1,0 +1,72 @@
+﻿@model myScoreApp.Models.Mekan
+
+@{
+    ViewData["Title"] = "MekanEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hasta Ekle</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="MekanEkle" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CatName" class="control-label">Hangi Deri Katmanında</label>
+                <select id="Select1" asp-items="@ViewBag.CatName" asp-for="CatName" class="form-control">
+                </select>
+                <span asp-validation-for="CatName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="hastalikAdi" class="control-label"></label>
+                <input asp-for="hastalikAdi" class="form-control" placeholder="Hastalığın Adını Giriniz" />
+                <span asp-validation-for="hastalikAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="doktor" class="control-label"></label>
+                <input asp-for="doktor" class="form-control" placeholder="Doktorunuzu Giriniz" />
+                <span asp-validation-for="doktor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hastaninAdi" class="control-label"></label>
+                <input asp-for="hastaninAdi" class="form-control" placeholder="Hastanın Adını Giriniz" />
+                <span asp-validation-for="hastaninAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kimlikNo" class="control-label"></label>
+                <input asp-for="kimlikNo" class="form-control" placeholder="Hastanin Kimlik Numarasını Giriniz" />
+                <span asp-validation-for="kimlikNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numara" class="control-label"></label>
+                <input asp-for="numara" class="form-control" placeholder="Hastanin Numarasını Giriniz" />
+                <span asp-validation-for="numara" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hastalikAciklamasi" class="control-label"></label>
+                <input asp-for="hastalikAciklamasi" class="form-control" placeholder="Hastalık Hakkında Açıklama Giriniz" />
+                <span asp-validation-for="hastalikAciklamasi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hastalikResmi" class="control-label">Hastalığın Resmini Giriniz</label>
+                <input asp-for="hastalikResmi" type="file" class="form-control-file" id="exampleFormControlFile1">
+                <span asp-validation-for="hastalikResmi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tarih" class="control-label">Hastanın Giriş Kaydı</label>
+                <input asp-for="tarih" class="form-control" />
+                <span asp-validation-for="tarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Home">Tüm Hastalara Git</a>
+</div>
+
